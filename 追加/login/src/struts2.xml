@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 開発モード -->
+	<constant name="struts.devMode" value="true"/>
+	<!-- パッケージ指定 -->
+	<package name="com.internousdev.login.action" extends="struts-default">
+		<!-- アクションクラスインスタンスのexecuteメソッド実行によってログイン画面の入力に対応項目が一致するレコード
+		があるかを判定し、それによって遷移するページを変更する。 -->
+		<action name="LoginAction" class="com.internousdev.login.action.LoginAction" method="execute">
+			<result name="success">loginSucess.jsp</result>
+			<result name="error">loginError.jsp</result>
+		</action>
+	
+	</package>
+</struts>
