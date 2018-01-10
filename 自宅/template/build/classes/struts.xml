@@ -23,7 +23,7 @@
 		<!-- UserCreateAction -->
 		<action name="UserCreateAction" class="com.internousdev.template.action.UserCreateAction" method="execute">
 			<result name="success">userCreate.jsp</result>
-			<result name="back">login.jsp</result>
+			<result name="back">login.jsp</result><!-- この分岐には入らない。 -->
 		</action>
 
 		<!-- UserCreateConfirmAction -->
@@ -40,16 +40,16 @@
 		<!-- BuyItemAction -->
 		<action name="BuyItemAction" class="com.internousdev.template.action.BuyItemAction" method="execute">
 			<result name="success">buyItemConfirm.jsp</result>
-			<result name="error">buyItem.jsp</result>
+			<result name="error">buyItem.jsp</result><!-- この分岐には入らない。 -->
 		</action>
 
 		<!-- BuyItemConfirmAction -->
 		<action name="BuyItemConfirmAction" class="com.internousdev.template.action.BuyItemConfirmAction" method="execute">
 			<result name="success">buyItemComplete.jsp</result>
-			<result name="back">buyItem.jsp</result>
+			<result name="back">buyItem.jsp</result><!-- この分岐には入らない。 -->
 		</action>
 
-		<!-- BuyItemCompleteAction -->
+		<!-- BuyItemCompleteAction --><!-- このアクションクラスは使われない。 -->
 		<action name="BuyItemCompleteAction" class="com.internousdev.template.action.BuyItemCompleteAction" method="execute">
 			<result name="success">home.jsp</result>
 		</action>

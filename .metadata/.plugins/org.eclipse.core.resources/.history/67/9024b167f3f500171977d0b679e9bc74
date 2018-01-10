@@ -1,0 +1,5 @@
+package com.inernousdev.login45.dto;
+
+public class MyPageDTO {
+
+}

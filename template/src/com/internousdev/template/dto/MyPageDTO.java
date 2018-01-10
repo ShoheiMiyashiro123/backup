@@ -2,6 +2,8 @@ package com.internousdev.template.dto;
 
 public class MyPageDTO {
 
+
+
 	public String itemName;
 
 	public String totalPrice;

@@ -1,0 +1,40 @@
+package com.internousdev.login45.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.internousdev.login45.util.DBConnector;
+import com.mysql.jdbc.PreparedStatement;
+
+public class MyPageDAO {
+	private DBConnector db = new DBConnector();
+	private Connection con = db.getConnection();
+
+	public MyPageDTO getMyPageUserInfo(String item_transaction_id,String user_master_id) throws SQLException{
+		String sql = "select total_price,total_count,pay from user_buy_item_transaction "+
+						"where item_transaction_id=? and user_master_id=?";
+
+		private MypageDTO mypageDTO = new MypageDTO();
+
+		try{
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1,item_transaction_id);
+			ps.setString(2,user_master_id);
+			ResultSet rs = ps.executeQuery();
+
+			if(rs.next()){
+				myPageDTO.setTotalPrice(rs.getInt("total_price"));
+				myPageDTO.setTotalCount(rs.getInt("total_count"));
+				myPageDTO.setPayment(rs.getString("pay"));
+			}
+
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			con.close();
+		}
+
+		return mypageDTO;
+	}
+}

@@ -35,8 +35,8 @@ public class MyPageDAO {
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			if(resultSet.next()) {
-				myPageDTO.setTotalPrice(resultSet.getString("total_price"));
-				myPageDTO.setTotalCount(resultSet.getString("total_count"));
+				myPageDTO.setTotalPrice(resultSet.getInt("total_price"));
+				myPageDTO.setTotalCount(resultSet.getInt("total_count"));
 				myPageDTO.setPayment(resultSet.getString("pay"));
 			}
 
