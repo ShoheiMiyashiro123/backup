@@ -73,7 +73,7 @@
 			<p>MyPage</p>
 		</div>
 		<div>
-			<s:if test="myPageList == null">
+			<s:if test="myPageDTOs == null">
 				<h3>ご購入情報はありません。</h3>
 			</s:if>
 			<s:elseif test="message == null">
@@ -96,7 +96,7 @@
 						</tr>
 					</s:iterator>
 				</table>
-				<s:form action="myPageAction">
+				<s:form action="MyPageAction">
 					<input type="hidden" name="deleteFlg" value="1">
 					<s:submit value="削除" method="delete" />
 				</s:form>

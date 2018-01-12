@@ -69,13 +69,14 @@
 		</div>
 		<div>
 			<s:form action="BuyItemAction">
+				<s:iterator value="buyItemDTOs">
 				<table>
 					<tr>
 						<td>
 							<span>商品名</span>
 						</td>
 						<td>
-							<s:property value="session.buyItem_name"/>
+							<s:property value="itemName"/>
 						</td>
 					</tr>
 					<tr>
@@ -84,7 +85,7 @@
 						</td>
 						<td>
 							<s:property
-							value="session.buyItem_price" />
+							value="itemPrice" />
 							<span>円</span>
 						</td>
 					</tr>
@@ -102,6 +103,10 @@
 							</select>
 						</td>
 					</tr>
+				</table>
+				</s:iterator>
+
+				<table>
 					<tr>
 						<td>
 							<span>支払い方法</span>

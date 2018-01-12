@@ -1,0 +1,5 @@
+package com.internousdev.login45.dao;
+
+public class DeleteDAO {
+
+}
