@@ -5,8 +5,8 @@
 		<item value="62" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="-1" key="dialogHeight"/>
-		<item value="-1" key="dialogWidth"/>
+		<item value="625" key="dialogHeight"/>
+		<item value="1200" key="dialogWidth"/>
 		<list key="textEntries">
 		</list>
 		<list key="orderedElements">
@@ -17,11 +17,30 @@
 		</list>
 	</section>
 	<section name="NewWizardAction">
+		<item value="org.eclipse.jst.jsp.ui.internal.wizard.NewJSPWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.wst.web.ui"/>
+		</list>
+	</section>
+	<section name="FileSystemExportWizard">
+		<item value="false" key="WizardFileSystemResourceExportPage1.STORE_OVERWRITE_EXISTING_FILES_ID"/>
+		<item value="false" key="WizardFileSystemResourceExportPage1.STORE_CREATE_STRUCTURE_ID"/>
+		<list key="WizardFileSystemResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\testuser\Desktop\workspace\workspace_miyashiro\backup\20180119_2"/>
+			<item value="C:\Users\testuser\Desktop\workspace\workspace_miyashiro\backup\20180119"/>
+			<item value="C:\Users\testuser\Desktop\workspace\workspace_miyashiro\backup\zz"/>
+		</list>
 	</section>
 	<section name="ImportExportAction">
+		<item value="org.eclipse.ui.wizards.export.FileSystem" key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID"/>
 		<item value="org.eclipse.ui.wizards.import.ExternalProject" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
 		</list>
+		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+		</list>
+	</section>
+	<section name="PreferencesExportWizard">
 	</section>
 </section>

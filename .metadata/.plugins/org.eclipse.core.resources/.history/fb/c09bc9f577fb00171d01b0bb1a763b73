@@ -1,0 +1,32 @@
+package com.internousdev.EC1.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class BuyItemConfirmAction extends ActionSupport implements SessionAware {                                                                            {
+
+	/**
+	 * 購入数量
+	 */
+	private int stock;
+
+	/**
+	 * 支払方法
+	 */
+	private int pay;
+
+	public Map<String,Object> session;
+
+	public String execute(){
+
+	}
+}
+
+@Override
+public void setSession(Map<String, Object> session) {
+	this.session = session;
+
+}

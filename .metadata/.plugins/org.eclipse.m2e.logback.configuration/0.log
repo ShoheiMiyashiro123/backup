@@ -136,3 +136,15 @@ java.net.UnknownHostException: services.gradle.org
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669) [org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar:na]
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608) [org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar:na]
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1515) [org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar:na]
+2018-01-15 21:53:57,315 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is out-of-date. Remote download required.
+2018-01-15 22:03:41,580 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.
+2018-01-17 19:16:40,541 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is out-of-date. Remote download required.
+2018-01-17 19:57:40,415 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.
+2018-01-17 20:29:57,965 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.
+2018-01-17 20:32:49,799 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.
+2018-01-17 21:18:58,892 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.
+2018-01-17 21:21:27,479 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.
+2018-01-17 21:51:14,813 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.
+2018-01-17 22:05:35,164 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.
+2018-01-19 19:58:39,861 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is out-of-date. Remote download required.
+2018-01-19 21:52:39,194 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.

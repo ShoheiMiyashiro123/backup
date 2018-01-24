@@ -1,0 +1,34 @@
+package com.internousdev.EC1.dao;
+
+import java.sql.Connection;
+
+import com.internousdev.EC1.util.DBConnector;
+
+public class BuyItemCompleteDAO {
+
+	/**
+	 * DBコネクタ
+	 */
+	private DBConnector db = new DBConnector();
+
+	/**
+	 * コネクション
+	 */
+	private Connection con = db.getConnection();
+
+	public void insertBuyItemInfo(){
+
+		String sql = "insert into user_buy_item_transaction("
+				+ "item_transaction_id,"
+				+ "total_price,"
+				+ "total_count,"
+				+ "user_master_id,"
+				+ "pay,"
+				+ "insert_date) "
+				+ "values(?,?,?,?,?,?)";
+
+		try{
+
+		}
+	}
+}

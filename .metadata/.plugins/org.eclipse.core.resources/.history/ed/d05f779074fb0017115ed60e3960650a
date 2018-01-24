@@ -1,0 +1,15 @@
+package com.internousdev.EC1.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class BuyItemAction extends ActionSupport{
+
+	public String execute(){
+		return SUCCESS;
+	}
+
+}
