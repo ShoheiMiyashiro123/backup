@@ -1,0 +1,35 @@
+package com.internousdev.EC1.action;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import com.internousdev.EC1.dao.SearchDAO;
+import com.internousdev.EC1.dto.SearchDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class SearchAction extends ActionSupport {
+
+	private ArrayList<SearchDTO> searchDTOs;
+
+	public String execute() throws SQLException{
+		SearchDAO searchDAO = new SearchDAO();
+		searchDTOs = searchDAO.itemInfo();
+
+		Iterator<SearchDTO> iterator = searchDTOs.iterator();
+		if(!iterator.hasNext()){
+			iterator = null;
+		}
+
+		return SUCCESS;
+	}
+
+	public ArrayList<SearchDTO> getSearchDTOs() {
+		return searchDTOs;
+	}
+
+	public void setSearchDTOs(ArrayList<SearchDTO> searchDTOs) {
+		this.searchDTOs = searchDTOs;
+	}
+
+}
