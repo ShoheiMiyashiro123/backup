@@ -1,0 +1,73 @@
+body{
+    font-family:"Hiragino Kaku Gothic ProN","メイリオ",sans-serif;
+}
+
+h1{
+    /*ボーダーに対して外側の余白の幅の決定*/
+    margin:0 auto;
+    margin-top:30px;
+    margin-bottom:20px;
+    margin-left:4px red solid;
+    /*背景色の決定*/
+    background-color:#f1f1f1;
+    /*ボーダーに対して内側の余白の幅の決定*/
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:15px;
+    /*要素の幅の決定*/
+    width:500px;
+    /*フォントの大きさの決定*/
+    font-size:20px;
+}
+
+.confirm{ 
+    /*要素の中央寄せ*/
+    margin:0 auto;
+    /*背景色の決定*/
+    background-color:#fbfbfb;
+    /*ボーダーの幅の決定*/
+    border:3px #ebebeb solid;
+    border-radius:10px;
+    /*要素の幅の決定*/
+    width:450px;
+    /*ボーダーに対して内側の余白の幅の決定*/
+    padding-top:20px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-bottom:60px;
+}
+
+form{
+    /*左回り込み*/
+    float:left;
+    /*ボーダーに対して左外側の余白の幅の決定*/
+    margin-right:15px;
+}
+
+.buttom1{
+    /*ボーダーの幅の決定*/
+    border:1px solid lightgray;
+    /*ボーダーに対して内側の余白の幅の決定*/
+    padding:4px 10px;
+    /*フォント色の決定*/
+    color:white;
+    /*背景色の決定*/
+    background-color:#bfbfbf;
+    /*角丸の開始位置を指定*/
+    border-radius:5px;
+    /*ボーダーの下幅の決定*/
+    border-bottom:solid 2px gray;
+}
+
+.buttom2{
+    /*ボーダーに対して内側の余白の幅の決定*/
+    padding:4px 10px;
+    /*フォントの色の決定*/
+    color:white;
+    /*背景色の決定*/
+    background-color:darkorange;
+    /*角丸の開始位置を指定*/
+    border-radius:5px;
+    /*ボーダーの下幅の決定*/
+    border-bottom:solid 2px #E08600;
+}
