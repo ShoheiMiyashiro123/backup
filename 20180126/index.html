@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang=ja>
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <title>お問い合わせフォーム</title>
+    <meta http-equiv="Content-Stile-Type" content="text/css"/>
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <style type="text/css">
+        .term{
+           margin-bottom:10px;
+        }
+        
+        .form-style{
+            max-width:450px;
+            font-family:"游ゴシック", "Lucida Grande",sans-serif;
+        }
+        
+        fieldset{
+            border-radius:10px;
+            -webkit-border-radius:10px;
+            -moz-border-radius-10px;
+            margin:0px 0px 10px 0px;
+            border:1px solid #FFD2D2;
+            padding:20px;
+            background:#FFF4F4;
+            box-shadow:inset 0px 0px 15px #FFE5E5;
+            -moz-box-shadow:inset 0px 0px 15px #FFE5E5;
+            -webkit-box-shadow:inset 0px 0px 15px #FFE5E5;
+        }
+    </style>
+<body>
+    <div class="form-style">
+    <fieldset>
+    <h1>お問い合わせフォーム</h1>
+    <form method="post" action="http://localhost/miyashiro/mail_confirm.php">
+        <div>
+            <div class="term">名前</div>
+            <input type="text" class="text" size="35" name="name" />
+        </div>
+        <br>
+        <div>
+            <div class="term">メールアドレス</div>
+            <input type="text" class="text" size="35" name="mail" />
+        </div>
+        <br>
+        <div>
+            <div class="term">年齢</div>
+            <select class="dropdown" name="age">
+            </select>
+        </div>
+        <br>
+        <div>
+            <div class="term">コメント</div>
+            <textarea name="comments"></textarea>
+        </div>
+        <br>
+        <input type="submit" class="submit" value="送信する" />
+    </form>
+    </fieldset>
+    </div>
+        
+    <script type="text/javascript">
+            $("[name='age']").append("<option>選択してください</option>");
+        for(var i=18;i<=65;i++){
+            $("[name='age']").append("<option>"+i+"</option>");
+        }
+        
+    </script>
+    
+</body>
+</html>
