@@ -1,0 +1,56 @@
+#header{
+    font-size:20px;
+    background-color:green;
+    color:white;
+    line-height:30px;
+    padding:5px;
+    margin-bottom:20px;
+}
+
+.term{
+    margin-bottom:10px;
+}
+
+#main{
+    width:1000px;
+    float:left;
+   
+}
+
+#sub{  
+    float:right;
+}
+
+#sub img{
+    margin:3px;
+    width:300px;
+}
+
+#footer{
+    clear:both;
+    background-color:green;
+    color:white;
+    text-align:center;
+    line-height:40px;
+    
+    
+    width:100%;
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    
+}
+
+table{
+    border-color: green;
+    width:40%;
+}
+
+h2,h3{
+    border-left-width:2px;
+    border-right-width:0;
+    border-top-width:0;
+    border-bottom-width:0;
+    border-left-color:grey;
+}
+
