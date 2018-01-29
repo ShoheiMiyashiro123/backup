@@ -1,0 +1,22 @@
+#header{
+    font-size:20px;
+    background-color:black;
+    color:white;
+    line-height:30px;
+    padding:5px;
+    margin-bottom:20px;
+}
+
+#footer{
+    background-color:black;
+    color:white;
+    text-align:center;
+    line-height:40px;
+    
+    
+    width:100%;
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    
+}
