@@ -28,5 +28,15 @@
 		<action name="BuyItemConfirmAction" class="com.internousdev.EC1.action.BuyItemConfirmAction" method="execute">
 			<result name="success">buyItemConfirm.jsp</result>
 		</action>
+		<action name="BuyItemCompleteAction" class="com.internousdev.EC1.action.BuyItemCompleteAction" method="execute">
+			<result name="success">buyItemComplete.jsp</result>
+		</action>
+		<action name="MyPageAction" class="com.internousdev.EC1.action.MyPageAction" method="execute">
+			<result name="success">myPage.jsp</result>
+		</action>
+
+		<action name="SearchAction" class="com.internousdev.EC1.action.SearchAction" method="execute">
+			<result name="success">search.jsp</result>
+		</action>
 	</package>
 </struts>
