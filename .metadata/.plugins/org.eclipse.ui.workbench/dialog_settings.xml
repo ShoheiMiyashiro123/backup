@@ -26,6 +26,7 @@
 		<item value="false" key="WizardFileSystemResourceExportPage1.STORE_OVERWRITE_EXISTING_FILES_ID"/>
 		<item value="false" key="WizardFileSystemResourceExportPage1.STORE_CREATE_STRUCTURE_ID"/>
 		<list key="WizardFileSystemResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\testuser\Desktop\workspace\workspace_miyashiro\backup\新しいフォルダー"/>
 			<item value="C:\Users\testuser\Desktop\workspace\workspace_miyashiro\backup\20180119_2"/>
 			<item value="C:\Users\testuser\Desktop\workspace\workspace_miyashiro\backup\20180119"/>
 			<item value="C:\Users\testuser\Desktop\workspace\workspace_miyashiro\backup\zz"/>
