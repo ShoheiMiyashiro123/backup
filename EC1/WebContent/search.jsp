@@ -91,7 +91,7 @@
 					<th>在庫</th>
 				</tr>
 				<s:iterator value="searchDTOs">
-				<s:form method="post" action="SearchAction">
+				<s:form method="post" action="CartAction">
 				<tr>
 					<td>
 						<img src='<s:property value="itemImage" />'>
@@ -109,7 +109,7 @@
 						<s:property value="itemStock" />
 					</td>
 					<td>
-						<input type="hidden" name="bought" value='<s:property value="itemId" />'>
+						<input type="hidden" name="itemId" value='<s:property value="itemId" />'>
 					</td>
 				</tr>
 				</s:form>
@@ -140,13 +140,13 @@
 	</div>
 </div>
 <script type="text/javascript">
-/*	$(function(){
-		$("form").on("click",function(){
-			$(this).removeAttr("action");
-			$(this).submit();
-			$(this).attr("action","SearchAction");
+$(function(){
+		$("tr").on("click",function(){
+			$(this).parent("form").removeAttr("action");
+			$(this).parent("form").submit();
+			$(this).parent("form").attr("action","CartAction");
 		});
-	});*/
+	});
 </script>
 </body>
 </html>

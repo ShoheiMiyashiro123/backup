@@ -2,7 +2,6 @@ package com.internousdev.EC1.action;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -28,23 +27,23 @@ public class SearchAction extends ActionSupport implements SessionAware{
 		SearchDAO searchDAO = new SearchDAO();
 		searchDTOs = searchDAO.itemInfo(keyword);
 
-		if(!session.containsKey("boughts"))
-			session.put("boughts", new ArrayList<SearchDTO>());
+		/*if(!session.containsKey("boughts"))
+			session.put("boughts", new ArrayList<SearchDTO>());*/
 
-		SearchDTO searchDTO = null;
+		//SearchDTO searchDTO = null;
 
-		Iterator<SearchDTO> iterator = searchDTOs.iterator();
+		//Iterator<SearchDTO> iterator = searchDTOs.iterator();
 		/*if(!iterator.hasNext()){
 			iterator = null;
 		}*/
 
 		//以下でsearchDTOs, bought及びsearchDTOがnullであったり空であったりする場合はどうすべきか？
 
-		boughts = (ArrayList<SearchDTO>)session.get("boughts");
-		Iterator<SearchDTO> irr = boughts.iterator();
+		/*boughts = (ArrayList<SearchDTO>)session.get("boughts");
+		Iterator<SearchDTO> irr = boughts.iterator();*/
 
 		//searchDTOないかも。
-		while(iterator.hasNext()){
+		/*while(iterator.hasNext()){
 			SearchDTO dto = iterator.next();
 			if(bought==dto.getItemId()){
 				searchDTO = (SearchDTO)dto.clone();
@@ -61,7 +60,7 @@ public class SearchAction extends ActionSupport implements SessionAware{
 		if(searchDTO!=null){
 			//session.put("boughts",boughts.add(searchDTO));
 			boughts.add(searchDTO);
-		}
+		}*/
 
 		return SUCCESS;
 	}
