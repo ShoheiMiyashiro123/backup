@@ -11,6 +11,7 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <title>BuyItem画面</title>
 <style type="text/css">
@@ -68,72 +69,101 @@
 		<div id="top">
 			<p>BuyItem</p>
 		</div>
-		<div>
-		<s:form action="BuyItemConfirmAction">
-			<table>
-				<tr>
-					<td>
-						<span>商品名</span>
-					</td>
-					<td>
-						<s:property value="session.buyItem_name" />
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<span>値段</span>
-					</td>
-					<td>
-						<s:property value="session.buyItem_price" />
-					</td>
-				</tr>
 
-				<!-- 在庫ではなく数量ではないか？？？ -->
-				<tr>
-					<td>
-						<span>在庫</span>
-					</td>
-					<td>
-						<select name="stock">
-							<option value="1" selected="selected">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<span>支払い方法</span>
-					</td>
-					<td>
-						<label>
-							<input type="radio" name="pay"
-							value="1" checked="checked">現金払い
-						</label>
-						<label>
-							<input type="radio" name="pay"
-							value="2">クレジットカード
-						</label>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<s:submit value="購入" />
-					</td>
-				</tr>
-			</table>
-		</s:form>
-			<div>
-				<span>前画面に戻る場合は</span>
-				<a href='<s:url action="HomeAction" />'>こちら</a>
+
+		<div id="buyItem">
+		<s:form action="BuyItemConfirmAction" theme="simple">
+			<s:iterator value="session.cart" status="st">
+
+			<div class="content">
+				<div><input type="hidden" name="itemId" value='<s:property value="itemId"/>'></div>
+				<table>
+					<tr>
+						<td>
+							<span>商品名</span>
+						</td>
+						<td>
+							<s:property value="itemName" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span>値段</span>
+						</td>
+						<td>
+							<s:property value="itemPrice" />
+						</td>
+					</tr>
+
+					<!-- 在庫ではなく数量ではないか？？？ -->
+					<tr>
+						<td>
+							<span>在庫</span>
+						</td>
+						<td>
+							<s:select name='buyInfo[%{#st.index}].totalCount'
+							list='%{session.stock[#st.index]}' value='1'/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span>支払い方法</span>
+						</td>
+						<td>
+							<s:radio list='#{"現金払い":"現金払い","クレジットカード":"クレジットカード"}'
+							name='buyInfo[%{#st.index}].payment' value="1"/>
+						</td>
+					</tr>
+				</table>
 			</div>
+			</s:iterator>
+			<div id="buy"><s:submit value="確認" /></div>
+		</s:form>
+		</div>
+
+		<div>
+			<span>ログイン画面に戻る場合は</span>
+			<a href='<s:url action="HomeAction" />'>こちら</a>
 		</div>
 	</div>
+
 	<div id="footer">
 		<div id="pr">
 		</div>
 	</div>
+
+<script type="text/javascript">
+
+/*$(function(){
+
+	$("#buy input").on("click",function(){*/
+
+		//var form = document.forms[0];
+		//form.stocks = new Array();
+		//form.pays = new Array();
+		//var stocks = new Array();
+		//var pays = new Array();
+
+
+		/*$(".content").each(function(){
+
+			$(this).append("<div><input type='hidden' name='stocks'/></div>");
+			$(this).append("<div><input type='hidden' name='pays'/></div>");
+
+			var itemId = parseInt($(this).find("input[name='itemId']").val(),10);
+			var st = $(this).find("select[name='stock']").val();
+			//var v = st.val();
+			stocks[itemId] = parseInt($(this).find("select[name='stock']").val(),10);
+			var pa = $(this).find("input[name='pay"+itemId+"']:checked").val();
+			//var w = pa.val();
+			pays[itemId] = parseInt($(this).find("input[name='pay"+itemId+"']:checked").val(),10);
+
+			//stocks.put(contents(i).find(".itemId").attr("value"),contents(i).find(".stock").value());
+
+		});
+
+	});
+});*/
+</script>
 </body>
 </html>

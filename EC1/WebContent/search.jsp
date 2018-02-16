@@ -76,12 +76,13 @@
 		<p>商品一覧</p>
 	</div>
 	<div>
-		<s:form method="post" action="SearchAction">
+		<s:form method="post" action="SearchAction" theme="simple">
 			以下に検索ワードを入力してください。
 			<div><s:textfield name="keyword" size="24"/></div>
 			<div><s:submit value="検索"/></div>
 		</s:form>
 		<div id="main">
+			<s:form method="post" action="CartAction">
 			<table>
 				<tr>
 					<th></th>
@@ -91,12 +92,12 @@
 					<th>在庫</th>
 				</tr>
 				<s:iterator value="searchDTOs">
-				<s:form method="post" action="CartAction">
-				<tr>
+
+				<tr class="click">
 					<td>
 						<img src='<s:property value="itemImage" />'>
 					</td>
-					<td>
+					<td class="itemId">
 						<s:property value="itemId" />
 					</td>
 					<td>
@@ -108,31 +109,12 @@
 					<td>
 						<s:property value="itemStock" />
 					</td>
-					<td>
-						<input type="hidden" name="itemId" value='<s:property value="itemId" />'>
-					</td>
 				</tr>
-				</s:form>
 				</s:iterator>
 			</table>
+
+			</s:form>
 		</div>
-		<!-- <div id="sub">
-			<p>カート</p>
-			<table>
-				<s:iterator value="boughts">
-				<tr>
-					<td>
-						<s:property value="itemId" />
-					</td>
-					<td>
-						<s:property value="itemName" />
-					</td>
-					<td>
-						<s:property value="itemPrice" />
-				</tr>
-				</s:iterator>
-			</table>
-		</div> -->
 	</div>
 </div>
 <div id="footer">
@@ -141,12 +123,13 @@
 </div>
 <script type="text/javascript">
 $(function(){
-		$("tr").on("click",function(){
-			$(this).parent("form").removeAttr("action");
-			$(this).parent("form").submit();
-			$(this).parent("form").attr("action","CartAction");
-		});
-	});
+		$(".click").on("click",function(){
+			var value = parseInt($(this).children(".itemId").text(),10);
+			$(this).append('<td><input type="hidden" name="itemId" value="'+value+'"></td>');
+			$(this).parents("form").submit();
+		}
+	)
+});
 </script>
 </body>
 </html>

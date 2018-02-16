@@ -17,34 +17,40 @@ public class MyPageDTO {
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public int getTotalPrice() {
 		return totalPrice;
 	}
 	public void setTotalPrice(int totalPrice) {
 		this.totalPrice = totalPrice;
 	}
+
 	public int getTotalCount() {
 		return totalCount;
 	}
 	public void setTotalCount(int totalCount) {
 		this.totalCount = totalCount;
 	}
+
 	public String getItemName() {
 		return itemName;
 	}
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
+
 	public String getPayment() {
 		return payment;
 	}
 	public void setPayment(String payment) {
 		this.payment = payment;
 	}
+
 	public Date getInsertDate() {
 		return insertDate;
 	}
 	public void setInsertDate(Date insertDate) {
 		this.insertDate = insertDate;
 	}
+
 }

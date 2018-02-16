@@ -11,12 +11,17 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 	public Map<String,Object> session;
 
 	public String execute(){
+
 		return SUCCESS;
 	}
 
 	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
 	}
 
 }

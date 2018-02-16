@@ -2,7 +2,6 @@ package com.internousdev.EC1.action;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -15,15 +14,13 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class LoginAction extends ActionSupport implements SessionAware {
 
+	private static String nameSearchDTO = "SearchDTO";
+
+
 	/**
 	 * ログインID
 	 */
 	private String loginUserId;
-
-	/**
-	 * ユーザ名
-	 */
-	//private String userName;
 
 	/**
 	 * ログインパスワード
@@ -42,7 +39,6 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 	public String execute() throws SQLException{
 
-		//System.out.println(loginUserId+", "+loginPassword);
 		LoginDAO loginDAO = new LoginDAO();
 		LoginDTO loginDTO = loginDAO.getLoginUserInfo(loginUserId,loginPassword);
 
@@ -60,30 +56,14 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		 * 処理が分岐するようにする。
 		 */
 		if(
-				//loginDTO.getLoginUserId().equals(loginUserId)&&loginDTO.getLoginPassword().equals(loginPassword)
 				((LoginDTO)session.get("loginUser")).getLoginFlg()
 				){
 			session.put("login_user_id",loginDTO.getLoginId());
 			session.put("login_password",loginDTO.getLoginPassword());
 
-			/*BuyItemDAO buyItemDAO = new BuyItemDAO();
-			ArrayList<BuyItemDTO> buyItemDTOs = buyItemDAO.buyItemInfo();
-			session.put("buyItem",buyItemDTOs);
-
-			BuyItemDTO buyItemDTO = buyItemDTOs.get(0);
-
-			session.put("id",buyItemDTO.getItemId());
-			session.put("buyItem_name",buyItemDTO.getItemName());
-			session.put("buyItem_price",buyItemDTO.getItemPrice());
-			session.put("buyItem_stock",buyItemDTO.getItemStock());*/
 
 			SearchDAO searchDAO = new SearchDAO();
-			searchDTOs = searchDAO.itemInfo();
-
-			Iterator<SearchDTO> iterator = searchDTOs.iterator();
-			if(!iterator.hasNext()){
-				iterator = null;
-			}
+			searchDTOs = searchDAO.itemInfo(nameSearchDTO);
 
 			return SUCCESS;
 		}else{

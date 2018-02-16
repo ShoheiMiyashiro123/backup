@@ -12,55 +12,18 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class SearchAction extends ActionSupport implements SessionAware{
 
+	private static String nameSearchDTO = "SearchDTO";
+
 	private String keyword;
 
 	private ArrayList<SearchDTO> searchDTOs;
 
-	private ArrayList<SearchDTO> boughts;
-
-	private int bought;
-
 	public Map<String,Object> session;
 
-	@SuppressWarnings("unchecked")
+
 	public String execute() throws SQLException{
 		SearchDAO searchDAO = new SearchDAO();
-		searchDTOs = searchDAO.itemInfo(keyword);
-
-		/*if(!session.containsKey("boughts"))
-			session.put("boughts", new ArrayList<SearchDTO>());*/
-
-		//SearchDTO searchDTO = null;
-
-		//Iterator<SearchDTO> iterator = searchDTOs.iterator();
-		/*if(!iterator.hasNext()){
-			iterator = null;
-		}*/
-
-		//以下でsearchDTOs, bought及びsearchDTOがnullであったり空であったりする場合はどうすべきか？
-
-		/*boughts = (ArrayList<SearchDTO>)session.get("boughts");
-		Iterator<SearchDTO> irr = boughts.iterator();*/
-
-		//searchDTOないかも。
-		/*while(iterator.hasNext()){
-			SearchDTO dto = iterator.next();
-			if(bought==dto.getItemId()){
-				searchDTO = (SearchDTO)dto.clone();
-				while(irr.hasNext()){
-					if(bought==irr.next().getItemId()){
-						searchDTO=null;
-					}
-					break;
-				}
-				break;
-			}
-		}
-
-		if(searchDTO!=null){
-			//session.put("boughts",boughts.add(searchDTO));
-			boughts.add(searchDTO);
-		}*/
+		searchDTOs = searchDAO.itemInfo(keyword,nameSearchDTO);
 
 		return SUCCESS;
 	}
@@ -79,22 +42,6 @@ public class SearchAction extends ActionSupport implements SessionAware{
 
 	public void setSearchDTOs(ArrayList<SearchDTO> searchDTOs) {
 		this.searchDTOs = searchDTOs;
-	}
-
-	public ArrayList<SearchDTO> getBoughts() {
-		return boughts;
-	}
-
-	public void setBoughts(ArrayList<SearchDTO> boughts) {
-		this.boughts = boughts;
-	}
-
-	public int getBought() {
-		return bought;
-	}
-
-	public void setBought(int bought) {
-		this.bought = bought;
 	}
 
 	@Override

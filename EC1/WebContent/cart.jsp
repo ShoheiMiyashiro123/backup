@@ -12,6 +12,7 @@
 <meta http-equiv="imagetoolbar" content="no" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <title>カート画面</title>
 <style type="text/css">
@@ -51,39 +52,87 @@
 		background-color:black;
 		clear:both;
 	}
+
+	#buying{
+		font-size:24px;
+	}
+
+	img{
+		width:60px;
+		height:60px;
+	}
+
 </style>
 </head>
 <body>
-	<p>カートの中身</p>
-	<table>
-		<tr>
-			<th></th>
-			<th>商品ID</th>
-			<th>商品名</th>
-			<th>価格</th>
-			<th>在庫</th>
-		</tr>
-		<s:iterator value="cart">
-		<!-- ここに最新のレコードに"カートに加わりました"マークを付ける -->
-		<s:if test=""></s:if>
-		<tr>
-			<td>
-			<img src='<s:property value="itemImage" />'>
-			</td>
-			<td>
-				<s:property value="itemId" />
-			</td>
-			<td>
-				<s:property value="itemName" />
-			</td>
-			<td>
-				<s:property value="itemPrice" />
-			</td>
-			<td>
-				<s:property value="itemStock" />
-			</td>
-		</tr>
-		</s:iterator>
-	</table>
+	<div id="header">
+		<div id="pr">
+		</div>
+	</div>
+	<div id="main">
+		<div id="top">
+			<p>カートの中身</p>
+		</div>
+		<s:form action="CartAction" method="post" theme="simple">
+		<table>
+			<tr>
+				<th></th>
+				<th>商品ID</th>
+				<th>商品名</th>
+				<th>価格</th>
+				<th>在庫</th>
+			</tr>
+			<s:iterator value="cart">
+			<!-- ここに最新のレコードに"カートに加わりました"マークを付ける -->
+			<s:if test=""></s:if>
+			<tr>
+				<td>
+					<img src='<s:property value="itemImage" />'>
+				</td>
+				<td class="itemId">
+					<s:property value="itemId" />
+				</td>
+				<td>
+					<s:property value="itemName" />
+				</td>
+				<td>
+					<s:property value="itemPrice" />
+				</td>
+				<td>
+					<s:property value="itemStock" />
+				</td>
+				<td>
+					<button class="remove" type="submit">削除</button>
+				</td>
+			</tr>
+			</s:iterator>
+		</table>
+		<div id="delete">
+			<input type="hidden" name="deleteFlg" value="1">
+		</div>
+		</s:form>
+		<div id="buying">
+			<span>購入ページへ進む場合は</span>
+			<a href='<s:url action="BuyItemAction"/>'>こちら</a>
+		</div>
+		<div>
+			<span>商品一覧に戻る場合は</span>
+			<a href='<s:url action="SearchAction"/>'>こちら</a>
+		</div>
+	</div>
+	<div id="footer">
+		<div id="pr">
+		</div>
+	</div>
+<script type="text/javascript">
+$(function(){
+		$(".remove").on("click",function(){
+			var tr = $(this).parents("tr");
+			var value = parseInt(tr.children(".itemId").text(),10);
+			tr.append('<td><input type="hidden" name="itemId" value="'+value+'"></td>');
+			$(this).parents("form").submit();
+		});
+});
+</script>
 </body>
 </html>

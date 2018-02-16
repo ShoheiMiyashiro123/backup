@@ -92,48 +92,42 @@ $(function() {
 			<h3>
 				購入する商品の確認をお願いします。
 			</h3>
+			<s:form theme="simple">
+			<s:iterator value="buyInfo" status="st">
 			<table>
-			<s:form>
 				<tr>
 					<td><span>商品名</span></td>
 					<td>
-						<s:property value="session.buyItem_name" />
+						<s:property value="itemName" />
 					</td>
 				</tr>
 				<tr>
 					<td><span>値段</span></td>
 					<td>
-						<s:property value="session.buyItem_totalPrice" />
+						<s:property value="totalPrice" />
 					</td>
 				</tr>
 				<tr>
 					<td><span>購入数量</span></td>
 					<td>
-						<s:property value="session.buyItem_count" />
+						<s:property value="totalCount" />
 						<span>個</span>
 					</td>
 				</tr>
 				<tr>
 					<td><span>支払方法</span></td>
 					<td>
-						<s:property value="session.buyItem_pay" />
+						<s:property value="payment" />
 					</td>
 				</tr>
-				<tr>
-					<td>
-						<br>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<button onclick='submitAction("BuyItemAction")' >戻る</button>
-					</td>
-					<td>
-						<button onclick='submitAction("BuyItemCompleteAction")'>購入</button>
-					</td>
-				</tr>
-			</s:form>
 			</table>
+			</s:iterator>
+			<div id="buy">
+				<button onclick='submitAction("BuyItemAction")' >戻る</button>
+				<span>&nbsp;</span>
+				<button onclick='submitAction("BuyItemCompleteAction")'>購入</button>
+			</div>
+			</s:form>
 		</div>
 	</div>
 	<div id="footer">

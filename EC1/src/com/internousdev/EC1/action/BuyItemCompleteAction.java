@@ -1,17 +1,15 @@
 package com.internousdev.EC1.action;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.EC1.dao.BuyItemCompleteDAO;
-import com.internousdev.EC1.dto.UserBuyItemDTO;
+import com.internousdev.EC1.dto.MyPageDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class BuyItemCompleteAction extends ActionSupport implements SessionAware{
-
-	private BuyItemCompleteDAO buyItemCompleteDAO = new BuyItemCompleteDAO();
 
 	public Map<String,Object> session;
 
@@ -19,13 +17,22 @@ public class BuyItemCompleteAction extends ActionSupport implements SessionAware
 	public String execute(){
 
 		String userLoginId = session.get("login_user_id").toString();
-		ArrayList<UserBuyItemDTO> userBuyItemDTOs = (ArrayList<UserBuyItemDTO>) session.get("user_buyItem");
+		List<MyPageDTO> buyInfo = (List<MyPageDTO>) session.get("buyInfo");
 
 		try{
-			buyItemCompleteDAO.insertBuyItemInfo(userLoginId,userBuyItemDTOs);
+
+			BuyItemCompleteDAO buyItemCompleteDAO = new BuyItemCompleteDAO();
+			buyItemCompleteDAO.insertBuyItemInfo(userLoginId,buyInfo);
+			session.remove("cart");
+			session.remove("stock");
+			session.remove("buyInfo");
+
 			return SUCCESS;
+
 		}catch(Exception e){
+
 			e.printStackTrace();
+
 			return ERROR;
 		}
 	}
