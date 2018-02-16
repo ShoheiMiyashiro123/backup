@@ -37,6 +37,7 @@
 
 		<action name="BuyItemCompleteAction" class="com.internousdev.EC1.action.BuyItemCompleteAction" method="execute">
 			<result name="success">buyItemComplete.jsp</result>
+			<result name="lack">buyItem.jsp</result>
 		</action>
 
 		<action name="MyPageAction" class="com.internousdev.EC1.action.MyPageAction" method="execute">

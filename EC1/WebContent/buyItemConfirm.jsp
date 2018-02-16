@@ -61,12 +61,12 @@
 	}
 </style>
 <script type="text/javascript">
-$(function() {
+/*$(function() {
 	$("button").onclick(function(){
 		//$(this).parents("form").attr("action",url);
 		//$(this).parents("form").submit();
 	});
-});
+});*/
 
 
 	function submitAction(url){

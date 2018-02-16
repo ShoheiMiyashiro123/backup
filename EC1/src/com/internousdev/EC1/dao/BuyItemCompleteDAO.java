@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 import com.internousdev.EC1.dto.MyPageDTO;
 import com.internousdev.EC1.util.DBConnector;
@@ -27,7 +29,14 @@ public class BuyItemCompleteDAO {
 	 */
 	private UtilDate utilDate = new UtilDate();
 
-	public void insertBuyItemInfo(String userLoginId,List<MyPageDTO> myPageDTOs) throws SQLException{
+	@SuppressWarnings("unchecked")
+	public int insertBuyItemInfo(String userLoginId,List<MyPageDTO> myPageDTOs,Map<String,Object>session) throws SQLException{
+
+		//更新の可能性
+		int ret;
+
+		//stockの取得
+		List<Collection<Integer>> stock = (List<Collection<Integer>>)session.get("cart");
 
 		//現在の在庫数の確認
 		int flg = 1;
@@ -43,8 +52,13 @@ public class BuyItemCompleteDAO {
 				ResultSet rs = ps.executeQuery();
 				while(rs.next()){
 					if(myPageDTO.getTotalCount()>rs.getInt("item_stock")){
+
+						Collection<Integer> st = stock.get(i);
+						for(int j=0;j<st.size();j++){
+							st.set();
+						}
+
 						flg = 0;
-						break;
 					}
 				}
 
@@ -58,20 +72,26 @@ public class BuyItemCompleteDAO {
 		if(flg==1){
 			//各商品の購入情報の登録
 			update(userLoginId,myPageDTOs);
+			ret = 1;
+		}else{
+			ret = 0;
 		}
 
 		con.close();
+
+		return ret;
 	}
 
 	private void update(String userLoginId,List<MyPageDTO> myPageDTOs){
 
 		//購入Idの付番
-		int buyId = 0;
-		String sqlBuyId = "select MAX(buy_id)+1 as buy_id from buy_item_transaction;";
+		int buyId = 1;
+		String sqlBuyId = "select ifnull(MAX(buy_id)+1,1) as buy_id from user_buy_item_transaction;";
 		try{
 			PreparedStatement psBuyId = con.prepareStatement(sqlBuyId);
 			ResultSet rs = psBuyId.executeQuery();
-			buyId = rs.getInt("buy_id");
+			while(rs.next())
+				buyId = rs.getInt("buy_id");
 
 		}catch(Exception e){
 			e.printStackTrace();
@@ -99,8 +119,8 @@ public class BuyItemCompleteDAO {
 
 			try{
 				PreparedStatement ps = con.prepareStatement(sql);
-				ps.setInt(1,myPageDTO.getId());
-				ps.setInt(2,buyId);
+				ps.setInt(1,buyId);
+				ps.setInt(2,myPageDTO.getId());
 				ps.setInt(3,myPageDTO.getTotalPrice());
 				ps.setInt(4,myPageDTO.getTotalCount());
 				ps.setString(5,userLoginId);

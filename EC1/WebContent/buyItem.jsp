@@ -69,8 +69,9 @@
 		<div id="top">
 			<p>BuyItem</p>
 		</div>
-
-
+		<s:if test="errorMessage!=null">
+			<h3><s:property value="errorMessage"/></h3>
+		</s:if>
 		<div id="buyItem">
 		<s:form action="BuyItemConfirmAction" theme="simple">
 			<s:iterator value="session.cart" status="st">
@@ -131,39 +132,5 @@
 		<div id="pr">
 		</div>
 	</div>
-
-<script type="text/javascript">
-
-/*$(function(){
-
-	$("#buy input").on("click",function(){*/
-
-		//var form = document.forms[0];
-		//form.stocks = new Array();
-		//form.pays = new Array();
-		//var stocks = new Array();
-		//var pays = new Array();
-
-
-		/*$(".content").each(function(){
-
-			$(this).append("<div><input type='hidden' name='stocks'/></div>");
-			$(this).append("<div><input type='hidden' name='pays'/></div>");
-
-			var itemId = parseInt($(this).find("input[name='itemId']").val(),10);
-			var st = $(this).find("select[name='stock']").val();
-			//var v = st.val();
-			stocks[itemId] = parseInt($(this).find("select[name='stock']").val(),10);
-			var pa = $(this).find("input[name='pay"+itemId+"']:checked").val();
-			//var w = pa.val();
-			pays[itemId] = parseInt($(this).find("input[name='pay"+itemId+"']:checked").val(),10);
-
-			//stocks.put(contents(i).find(".itemId").attr("value"),contents(i).find(".stock").value());
-
-		});
-
-	});
-});*/
-</script>
 </body>
 </html>

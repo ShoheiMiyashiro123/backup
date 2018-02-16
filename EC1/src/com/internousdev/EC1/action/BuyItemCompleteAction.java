@@ -11,6 +11,8 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class BuyItemCompleteAction extends ActionSupport implements SessionAware{
 
+	private String errorMessage;
+
 	public Map<String,Object> session;
 
 	@SuppressWarnings("unchecked")
@@ -22,12 +24,18 @@ public class BuyItemCompleteAction extends ActionSupport implements SessionAware
 		try{
 
 			BuyItemCompleteDAO buyItemCompleteDAO = new BuyItemCompleteDAO();
-			buyItemCompleteDAO.insertBuyItemInfo(userLoginId,buyInfo);
-			session.remove("cart");
-			session.remove("stock");
-			session.remove("buyInfo");
+			int ret = buyItemCompleteDAO.insertBuyItemInfo(userLoginId,buyInfo);
+			if(ret==1){
+				session.remove("cart");
+				session.remove("stock");
+				session.remove("buyInfo");
 
-			return SUCCESS;
+				return SUCCESS;
+			}else{
+
+				errorMessage = "在庫が不足しています。";
+				return "lack";
+			}
 
 		}catch(Exception e){
 
@@ -43,6 +51,18 @@ public class BuyItemCompleteAction extends ActionSupport implements SessionAware
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 
+	}
+
+
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 }

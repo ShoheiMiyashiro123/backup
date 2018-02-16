@@ -42,7 +42,7 @@ create table user_buy_item_transaction(
 	updated_date datetime
 );
 
-insert into item_info_transaction(buy_id,item_name,item_image,item_price,item_stock) values(1,"NoteBook","img/01.jpg",100,50);
-insert into item_info_transaction(buy_id,item_name,item_image,item_price,item_stock) values(1,"ClearFile","img/02.jpg",200,30);
-insert into item_info_transaction(buy_id,item_name,item_image,item_price,item_stock) values(2,"Pen","img/03.jpg",40,100);
+insert into item_info_transaction(item_name,item_image,item_price,item_stock) values("NoteBook","img/01.jpg",100,50);
+insert into item_info_transaction(item_name,item_image,item_price,item_stock) values("ClearFile","img/02.jpg",200,30);
+insert into item_info_transaction(item_name,item_image,item_price,item_stock) values("Pen","img/03.jpg",40,100);
 insert into login_user_transaction(login_id,login_pass,user_name) values("internous","internous01","test");

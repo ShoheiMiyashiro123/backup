@@ -12,7 +12,7 @@ public class DBConnector {
 	//jdbc:mysql://(サーバ名)/(データベース名)の形をとる。
 	public static String url = "jdbc:mysql://localhost/ecsite";
 	//入力用パスワードの用意
-	public static String password = "";
+	public static String password = "mysql";
 
 	public Connection getConnection(){
 		Connection con = null;
