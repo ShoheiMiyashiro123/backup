@@ -2,9 +2,24 @@ package com.internousdev.EC1.dto;
 
 public class LoginDTO {
 
+	/**
+	 * ログインId
+	 */
 	private String loginId;
+
+	/**
+	 * ログインパスワード
+	 */
 	private String loginPassword;
+
+	/**
+	 * ユーザ名
+	 */
 	private String userName;
+
+	/**
+	 * ログインフラグ(データベースにユーザデータが存在するときはTrueに切り替える。)
+	 */
 	private boolean loginFlg = false;
 
 

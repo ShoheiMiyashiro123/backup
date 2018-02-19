@@ -152,6 +152,8 @@
 	</div>
 </div>
 <script type="text/javascript">
+
+//クリックされた行の商品の商品IdをCartActionに渡す。
 $(function(){
 		$(".click").on("click",function(){
 			var value = parseInt($(this).children(".itemId").text(),10);
