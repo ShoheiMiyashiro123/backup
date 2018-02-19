@@ -9426,7 +9426,11 @@ java.io.FileNotFoundException: C:\Users\testuser\Desktop\workspace\workspace_miy
 	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2270)
 	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$4.run(IDEWorkbenchAdvisor.java:453)
 	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+<<<<<<< HEAD
 !SESSION 2018-02-09 19:28:30.372 -----------------------------------------------
+=======
+!SESSION 2018-02-16 19:16:31.140 -----------------------------------------------
+>>>>>>> f517a5629dcfcdea0e0ae2a339d19575700f5d5a
 eclipse.buildId=4.5.2.M20160212-1500
 java.version=1.8.0_74
 java.vendor=Oracle Corporation
@@ -9434,9 +9438,15 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
 Framework arguments:  -product org.eclipse.epp.package.jee.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 4 567 2018-02-09 19:28:46.868
 !MESSAGE ワークスペースは復元されましたが、問題が発生しました。
 !SUBENTRY 1 org.eclipse.core.resources 4 567 2018-02-09 19:28:46.868
+=======
+!ENTRY org.eclipse.core.resources 4 567 2018-02-16 19:17:25.444
+!MESSAGE ワークスペースは復元されましたが、問題が発生しました。
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2018-02-16 19:17:25.444
+>>>>>>> f517a5629dcfcdea0e0ae2a339d19575700f5d5a
 !MESSAGE 'EC1' のメタデータを読み取れませんでした。
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: 'EC1' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
@@ -9521,6 +9531,7 @@ org.eclipse.core.internal.resources.ResourceException: 'EC1' のプロジェク�
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+<<<<<<< HEAD
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2018-02-09 19:28:46.868
 !MESSAGE 'EC1' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
 
@@ -9829,6 +9840,79 @@ org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.NoSuchMethod
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
 	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
 	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:694)
+=======
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2018-02-16 19:17:25.465
+!MESSAGE 'EC1' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2018-02-16 19:17:25.466
+!MESSAGE 'TestProject01' のメタデータを読み取れませんでした。
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: 'TestProject01' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:888)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:902)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:882)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:733)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1588)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2386)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2157)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:463)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:941)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:318)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.eclipse.emf.ecore.plugin.EcorePlugin.getWorkspaceRoot(EcorePlugin.java:1131)
+	at org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl.<clinit>(ExtensibleURIConverterImpl.java:393)
+	at org.eclipse.emf.ecore.resource.URIConverter.<clinit>(URIConverter.java:739)
+	at org.eclipse.emf.ecore.plugin.URIMappingRegistryReader.readElement(URIMappingRegistryReader.java:72)
+	at org.eclipse.emf.ecore.plugin.RegistryReader.internalReadElement(RegistryReader.java:118)
+	at org.eclipse.emf.ecore.plugin.RegistryReader.readRegistry(RegistryReader.java:88)
+	at org.eclipse.emf.ecore.plugin.EcorePlugin$ExtensionProcessor.internalProcessExtensions(EcorePlugin.java:924)
+	at org.eclipse.emf.ecore.plugin.EcorePlugin$ExtensionProcessor.access$0(EcorePlugin.java:868)
+	at org.eclipse.emf.ecore.plugin.EcorePlugin$Implementation.start(EcorePlugin.java:678)
+	at org.eclipse.emf.common.EMFPlugin$OSGiDelegatingBundleActivator.start(EMFPlugin.java:201)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:941)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:318)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.eclipse.e4.ui.internal.workbench.GenericMApplicationElementFactoryImpl$MApplicationElementClassToEClass.<init>(GenericMApplicationElementFactoryImpl.java:136)
+	at org.eclipse.e4.ui.internal.workbench.GenericMApplicationElementFactoryImpl$MApplicationElementClassToEClass.<init>(GenericMApplicationElementFactoryImpl.java:112)
+	at org.eclipse.e4.ui.internal.workbench.GenericMApplicationElementFactoryImpl.<init>(GenericMApplicationElementFactoryImpl.java:71)
+	at org.eclipse.e4.ui.internal.workbench.ModelServiceImpl.<init>(ModelServiceImpl.java:126)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createDefaultContext(E4Application.java:530)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:203)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:628)
+>>>>>>> f517a5629dcfcdea0e0ae2a339d19575700f5d5a
 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
 	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
 	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
@@ -9845,6 +9929,7 @@ org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.NoSuchMethod
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+<<<<<<< HEAD
 Caused by: java.lang.NoSuchMethodError: org.eclipse.ui.internal.registry.FileEditorMapping.setDefaultEditor(Lorg/eclipse/ui/internal/registry/EditorDescriptor;)V
 	at org.sf.feeling.decompiler.Startup$SetupClassFileAssociationRunnable.run(Startup.java:81)
 	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:162)
@@ -10280,6 +10365,14 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.e
 !MESSAGE 'サーバー' のメタデータを読み取れませんでした。
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException: 'サーバー' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
+=======
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2018-02-16 19:17:25.467
+!MESSAGE 'TestProject01' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2018-02-16 19:17:25.467
+!MESSAGE 'login45' のメタデータを読み取れませんでした。
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: 'login45' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
+>>>>>>> f517a5629dcfcdea0e0ae2a339d19575700f5d5a
 	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:888)
 	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:902)
 	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:882)
@@ -10361,10 +10454,17 @@ org.eclipse.core.internal.resources.ResourceException: 'サーバー' のプロ�
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+<<<<<<< HEAD
 !SUBENTRY 2 org.eclipse.core.resources 4 567 2018-02-19 19:07:05.289
 !MESSAGE 'サーバー' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
 
 !ENTRY org.eclipse.ui 4 0 2018-02-19 19:07:26.841
+=======
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2018-02-16 19:17:25.468
+!MESSAGE 'login45' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
+
+!ENTRY org.eclipse.ui 4 0 2018-02-16 19:18:11.538
+>>>>>>> f517a5629dcfcdea0e0ae2a339d19575700f5d5a
 !MESSAGE 未処理のイベント・ループ例外
 !STACK 0
 org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.NoSuchMethodError: org.eclipse.ui.internal.registry.FileEditorMapping.setDefaultEditor(Lorg/eclipse/ui/internal/registry/EditorDescriptor;)V)
@@ -10373,6 +10473,7 @@ org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.NoSuchMethod
 	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
 	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4155)
 	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3772)
+<<<<<<< HEAD
 	at org.eclipse.jface.window.Window.runEventLoop(Window.java:827)
 	at org.eclipse.jface.window.Window.open(Window.java:803)
 	at org.eclipse.jface.dialogs.MessageDialog.open(MessageDialog.java:330)
@@ -10387,6 +10488,8 @@ org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.NoSuchMethod
 	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1113)
 	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4180)
 	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3769)
+=======
+>>>>>>> f517a5629dcfcdea0e0ae2a339d19575700f5d5a
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
@@ -10414,4 +10517,49 @@ Caused by: java.lang.NoSuchMethodError: org.eclipse.ui.internal.registry.FileEdi
 	at org.eclipse.ui.internal.UISynchronizer$3.run(UISynchronizer.java:154)
 	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
 	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+<<<<<<< HEAD
 	... 37 more
+=======
+	... 23 more
+
+!ENTRY org.eclipse.core.resources 4 567 2018-02-16 19:18:30.413
+!MESSAGE 'EC1' のプロジェクト記述ファイル (.project) がありません。 このファイルには、プロジェクトに関する重要な情報が含まれています。 このファイルが復元されるまで、プロジェクトは正しく機能しません。
+
+!ENTRY org.eclipse.core.resources 4 568 2018-02-16 19:18:51.165
+!MESSAGE '/RemoteSystemsTempFiles' のメタデータを書き込みできませんでした。
+!STACK 0
+java.io.FileNotFoundException: C:\Users\testuser\Workspace\backup\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers.snap (指定されたパスが見つかりません。)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:133)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1769)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1853)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1222)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1163)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.ui.ide 4 4 2018-02-16 19:21:27.664
+!MESSAGE ワークスペースの保管の問題
+
+!ENTRY org.eclipse.ui.ide 4 1 2018-02-16 19:21:27.666
+!MESSAGE ワークベンチの状態を保管中に問題が発生しました。
+!SUBENTRY 1 org.eclipse.core.resources 4 568 2018-02-16 19:21:27.666
+!MESSAGE '/RemoteSystemsTempFiles' のメタデータを書き込みできませんでした。
+!STACK 0
+java.io.FileNotFoundException: C:\Users\testuser\Workspace\backup\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers (指定されたパスが見つかりません。)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:162)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:51)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1658)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1740)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1197)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2270)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$4.run(IDEWorkbenchAdvisor.java:453)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+>>>>>>> f517a5629dcfcdea0e0ae2a339d19575700f5d5a
