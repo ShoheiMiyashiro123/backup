@@ -1,8 +1,9 @@
 package com.internousdev.EC1.util;
 
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+
+import com.mysql.jdbc.Connection;
 
 public class DBConnector {
 	//jdbcドライバのクラス名のことである。
@@ -21,7 +22,7 @@ public class DBConnector {
 			Class.forName(driverName);
 
 			//コネクションを取得する。(接続するdbの種類に応じてdbドライバを選択し接続する。)
-			con = DriverManager.getConnection(url,userName,password);
+			con = (Connection) DriverManager.getConnection(url,userName,password);
 		}catch(ClassNotFoundException e){
 			e.printStackTrace();
 		}catch(SQLException e){

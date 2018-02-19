@@ -38,6 +38,7 @@
 		<action name="BuyItemCompleteAction" class="com.internousdev.EC1.action.BuyItemCompleteAction" method="execute">
 			<result name="success">buyItemComplete.jsp</result>
 			<result name="lack">buyItem.jsp</result>
+			<result name="error">error.jsp</result>
 		</action>
 
 		<action name="MyPageAction" class="com.internousdev.EC1.action.MyPageAction" method="execute">
@@ -50,6 +51,11 @@
 
 		<action name="CartAction" class="com.internousdev.EC1.action.CartAction" method="execute">
 			<result name="success">cart.jsp</result>
+			<result name="error">search.jsp</result>
+		</action>
+
+		<action name="GoHomeAction" class="com.internousdev.EC1.action.GoHomeAction" method="execute">
+			<result name="success">home.jsp</result>
 		</action>
 	</package>
 </struts>

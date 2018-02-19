@@ -59,6 +59,26 @@
 		background-color:black;
 		clear:both;
 	}
+
+	.bar{
+		float:right;
+		list-style:none;
+		font-weight:bold;
+		line-height:80px;
+		margin:5px;
+	}
+
+	.bar a{
+		text-decoration:none;
+	}
+
+	.bar a:link{
+		color:yellow;
+	}
+
+	.bar a:visited{
+		color:#FFF;
+	}
 </style>
 <script type="text/javascript">
 /*$(function() {
@@ -81,6 +101,13 @@
 <body>
 	<div id="header">
 		<div id="pr">
+			<ul>
+				<li class="bar"><a href='<s:url action="MyPageAction" />'>マイページ</a></li>
+				<li class="bar"><a href='<s:url action="CartAction" />'>カートの中身を見る</a></li>
+				<li class="bar"><a href='<s:url action="SearchAction" />'>商品一覧</a></li>
+				<li class="bar"><a href='<s:url action="HomeAction" />'>ログアウト</a></li>
+			</ul>
+
 		</div>
 	</div>
 	<div id="main">

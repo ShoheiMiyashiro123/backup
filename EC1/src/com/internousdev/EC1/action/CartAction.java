@@ -2,7 +2,7 @@ package com.internousdev.EC1.action;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -15,8 +15,11 @@ public class CartAction extends ActionSupport implements SessionAware{
 
 	private static String nameSearchDTO = "SearchDTO";
 
+	private List<SearchDTO> searchDTOs;
+
+
 	//商品のidまたはそれに付随するものを取得する
-	private int itemId;
+	private int itemId = -1;
 
 	//カート内からの商品の削除
 	private int deleteFlg = 0;
@@ -25,7 +28,7 @@ public class CartAction extends ActionSupport implements SessionAware{
 	private ArrayList<SearchDTO> cart;
 
 	//リスト(在庫数選択肢情報)
-	private Collection<Collection<Integer>> stock;
+	private List<List<Integer>> stock;
 
 	//エラーメッセージ
 	private String errorMessage;
@@ -35,6 +38,12 @@ public class CartAction extends ActionSupport implements SessionAware{
 
 	@SuppressWarnings("unchecked")
 	public String execute() throws SQLException{
+
+		//itemIdが前jspファイルの入力として取得されない場合は
+		//sessionを変更せずにcart.jspに遷移する。
+		if(itemId==-1){
+			return SUCCESS;
+		}
 
 		//リストcartの取得または生成
 		if(session.containsKey("cart")){
@@ -48,10 +57,10 @@ public class CartAction extends ActionSupport implements SessionAware{
 		//リストstockの取得または生成
 		if(session.containsKey("stock")){
 
-			stock= (Collection<Collection<Integer>>)session.get("stock");
+			stock= (List<List<Integer>>)session.get("stock");
 		}else{
 
-			stock = new ArrayList<Collection<Integer>>();
+			stock = new ArrayList<List<Integer>>();
 		}
 
 		//商品情報の追加又は削除
@@ -66,7 +75,16 @@ public class CartAction extends ActionSupport implements SessionAware{
 				break;
 		}
 
-		return SUCCESS;
+		if(errorMessage==null){
+
+			return SUCCESS;
+		}else{
+
+			SearchDAO searchDAO = new SearchDAO();
+			searchDTOs = searchDAO.itemInfo(nameSearchDTO);
+
+			return ERROR;
+		}
 	}
 
 	public int search(int itemId,ArrayList<SearchDTO> array){
@@ -89,12 +107,13 @@ public class CartAction extends ActionSupport implements SessionAware{
 		SearchDAO searchDAO = new SearchDAO();
 		ArrayList<SearchDTO> searchDTOs = searchDAO.itemInfo(itemId,nameSearchDTO);
 
-		if(searchDTOs.size()!=0){
+		if(searchDTOs.size()!=0&&searchDTOs.get(0).getItemStock()>0){
 
 			//商品情報が存在するときにcart及びstockにその情報を追加
 			SearchDTO searchDTO = searchDTOs.get(0);
 			cart.add(searchDTO);
-			stock.add(serial(searchDTO.getItemStock()));
+			stock.add(cart.size()-1,serial(searchDTO.getItemStock()));
+
 		}else{
 
 			//商品がない場合はerrorMessageを取得
@@ -107,9 +126,9 @@ public class CartAction extends ActionSupport implements SessionAware{
 
 	}
 
-	private Collection<Integer> serial(int max){
+	private List<Integer> serial(int max){
 
-		Collection<Integer> list = new ArrayList<Integer>();
+		List<Integer> list = new ArrayList<Integer>();
 		for(int i=1;i<=max;i++){list.add(i);}
 		return list;
 	}
@@ -168,11 +187,19 @@ public class CartAction extends ActionSupport implements SessionAware{
 		this.errorMessage = errorMessage;
 	}
 
-	public Collection<Collection<Integer>> getStock() {
+	public List<List<Integer>> getStock() {
 		return stock;
 	}
 
-	public void setStock(Collection<Collection<Integer>> stock) {
+	public void setStock(List<List<Integer>> stock) {
 		this.stock = stock;
+	}
+
+	public List<SearchDTO> getSearchDTOs() {
+		return searchDTOs;
+	}
+
+	public void setSearchDTOs(List<SearchDTO> searchDTOs) {
+		this.searchDTOs = searchDTOs;
 	}
 }

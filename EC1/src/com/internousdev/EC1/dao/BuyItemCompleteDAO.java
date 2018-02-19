@@ -31,14 +31,11 @@ public class BuyItemCompleteDAO {
 	@SuppressWarnings("unchecked")
 	public int insertBuyItemInfo(String userLoginId,List<MyPageDTO> myPageDTOs,Map<String,Object>session) throws SQLException{
 
-		//更新の可能性
-		int ret;
-
 		//stockの取得
-		List<List<Integer>> stock = (List<List<Integer>>)session.get("cart");
+		List<List<Integer>> stock = (List<List<Integer>>)session.get("stock");
 
 		//現在の在庫数の確認
-		int flg = 1;
+		int flg = 0;
 		for(int i=0;i<myPageDTOs.size();i++){
 
 			MyPageDTO myPageDTO = myPageDTOs.get(i);
@@ -48,16 +45,19 @@ public class BuyItemCompleteDAO {
 
 				PreparedStatement ps = con.prepareStatement(sqlStockConf);
 				ps.setInt(1,myPageDTO.getId());
-				ResultSet rs = ps.executeQuery();
+				ResultSet rs = ps.executeQuery();//在庫数を引き出せない場合(在庫がない場合)どうするか？
+
 				while(rs.next()){
 					if(myPageDTO.getTotalCount()>rs.getInt("item_stock")){
 
 						List<Integer> st = stock.get(i);
+						st.clear();//リストの要素を一旦削除
 						for(int j=1;j<=rs.getInt("item_stock");j++){
-							st.set(j,j);
+							st.add(j);
 						}
 
-						flg = 0;
+						stock.set(i,st);
+						flg = 1;
 					}
 				}
 
@@ -68,17 +68,14 @@ public class BuyItemCompleteDAO {
 
 		}
 
-		if(flg==1){
+		if(flg==0){
 			//各商品の購入情報の登録
 			update(userLoginId,myPageDTOs);
-			ret = 1;
-		}else{
-			ret = 0;
 		}
 
 		con.close();
 
-		return ret;
+		return flg;
 	}
 
 	private void update(String userLoginId,List<MyPageDTO> myPageDTOs){

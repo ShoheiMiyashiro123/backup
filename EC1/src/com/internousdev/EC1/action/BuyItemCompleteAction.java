@@ -24,8 +24,8 @@ public class BuyItemCompleteAction extends ActionSupport implements SessionAware
 		try{
 
 			BuyItemCompleteDAO buyItemCompleteDAO = new BuyItemCompleteDAO();
-			int ret = buyItemCompleteDAO.insertBuyItemInfo(userLoginId,buyInfo);
-			if(ret==1){
+			int flg = buyItemCompleteDAO.insertBuyItemInfo(userLoginId,buyInfo,session);
+			if(flg==0){
 				session.remove("cart");
 				session.remove("stock");
 				session.remove("buyInfo");

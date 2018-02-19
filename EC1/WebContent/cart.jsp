@@ -62,11 +62,37 @@
 		height:60px;
 	}
 
+	.bar{
+		float:right;
+		list-style:none;
+		font-weight:bold;
+		line-height:80px;
+		margin:5px;
+	}
+
+	.bar a{
+		text-decoration:none;
+	}
+
+	.bar a:link{
+		color:yellow;
+	}
+
+	.bar a:visited{
+		color:#FFF;
+	}
 </style>
 </head>
 <body>
 	<div id="header">
 		<div id="pr">
+			<ul>
+				<li class="bar"><a href='<s:url action="MyPageAction" />'>マイページ</a></li>
+				<li class="bar"><a href='<s:url action="CartAction" />'>カートの中身を見る</a></li>
+				<li class="bar"><a href='<s:url action="SearchAction" />'>商品一覧</a></li>
+				<li class="bar"><a href='<s:url action="HomeAction" />'>ログアウト</a></li>
+			</ul>
+
 		</div>
 	</div>
 	<div id="main">
@@ -82,7 +108,7 @@
 				<th>価格</th>
 				<th>在庫</th>
 			</tr>
-			<s:iterator value="cart">
+			<s:iterator value="session.cart">
 			<!-- ここに最新のレコードに"カートに加わりました"マークを付ける -->
 			<s:if test=""></s:if>
 			<tr>
@@ -114,10 +140,6 @@
 		<div id="buying">
 			<span>購入ページへ進む場合は</span>
 			<a href='<s:url action="BuyItemAction"/>'>こちら</a>
-		</div>
-		<div>
-			<span>商品一覧に戻る場合は</span>
-			<a href='<s:url action="SearchAction"/>'>こちら</a>
 		</div>
 	</div>
 	<div id="footer">

@@ -66,6 +66,8 @@
 		</div>
 	</div>
 
+	<s:if test=""></s:if>
+
 	<div id="main">
 		<div id="top">
 			<p>Login</p>

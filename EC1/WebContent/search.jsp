@@ -48,6 +48,7 @@
 	}
 
 	#main {
+		clear:right;
 		width:100%;
 		height:500px;
 		text-align:center;
@@ -64,11 +65,38 @@
 		width:60px;
 		height:60px;
 	}
+
+	.bar{
+		float:right;
+		list-style:none;
+		font-weight:bold;
+		line-height:80px;
+		margin:5px;
+	}
+
+	.bar a{
+		text-decoration:none;
+	}
+
+	.bar a:link{
+		color:yellow;
+	}
+
+	.bar a:visited{
+		color:#FFF;
+	}
 </style>
 </head>
 <body>
 <div id="header">
 	<div id="pr">
+		<ul>
+			<li class="bar"><a href='<s:url action="MyPageAction" />'>マイページ</a></li>
+			<li class="bar"><a href='<s:url action="CartAction" />'>カートの中身を見る</a></li>
+			<li class="bar"><a href='<s:url action="SearchAction" />'>商品一覧</a></li>
+			<li class="bar"><a href='<s:url action="HomeAction" />'>ログアウト</a></li>
+		</ul>
+
 	</div>
 </div>
 <div id="main">
@@ -81,8 +109,11 @@
 			<div><s:textfield name="keyword" size="24"/></div>
 			<div><s:submit value="検索"/></div>
 		</s:form>
+		<s:if test="errorMessage!=null">
+			<h3><s:property value="errorMessage"/></h3>
+		</s:if>
 		<div id="main">
-			<s:form method="post" action="CartAction">
+			<s:form method="post" action="CartAction" theme="simple">
 			<table>
 				<tr>
 					<th></th>
@@ -122,6 +153,8 @@
 	</div>
 </div>
 <script type="text/javascript">
+
+//クリックされた行の商品の商品IdをCartActionに渡す。
 $(function(){
 		$(".click").on("click",function(){
 			var value = parseInt($(this).children(".itemId").text(),10);

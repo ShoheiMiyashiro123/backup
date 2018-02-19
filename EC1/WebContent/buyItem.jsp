@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 
 <!DOCTYPE html>
 <html>
@@ -42,7 +42,7 @@
 	#header{
 		width:100%;
 		height:80px;
-		back-ground-color:black;
+		background-color:black;
 	}
 
 	#main{
@@ -58,11 +58,37 @@
 		clear:both;
 	}
 
+	.bar{
+		float:right;
+		list-style:none;
+		font-weight:bold;
+		line-height:80px;
+		margin:5px;
+	}
+
+	.bar a{
+		text-decoration:none;
+	}
+
+	.bar a:link{
+		color:yellow;
+	}
+
+	.bar a:visited{
+		color:#FFF;
+	}
 </style>
 </head>
 <body>
 	<div id="header">
 		<div id="pr">
+			<ul>
+				<li class="bar"><a href='<s:url action="MyPageAction" />'>マイページ</a></li>
+				<li class="bar"><a href='<s:url action="CartAction" />'>カートの中身を見る</a></li>
+				<li class="bar"><a href='<s:url action="SearchAction" />'>商品一覧</a></li>
+				<li class="bar"><a href='<s:url action="HomeAction" />'>ログアウト</a></li>
+			</ul>
+
 		</div>
 	</div>
 	<div id="main">
@@ -112,7 +138,7 @@
 						</td>
 						<td>
 							<s:radio list='#{"現金払い":"現金払い","クレジットカード":"クレジットカード"}'
-							name='buyInfo[%{#st.index}].payment' value="1"/>
+							name='buyInfo[%{#st.index}].payment' class="empty"/>
 						</td>
 					</tr>
 				</table>
@@ -122,15 +148,14 @@
 		</s:form>
 		</div>
 
-		<div>
-			<span>ログイン画面に戻る場合は</span>
-			<a href='<s:url action="HomeAction" />'>こちら</a>
-		</div>
 	</div>
 
 	<div id="footer">
 		<div id="pr">
 		</div>
 	</div>
+	<script type="text/javascript">
+		$(".empty[value='現金払い']").prop("checked",true);
+	</script>
 </body>
 </html>
